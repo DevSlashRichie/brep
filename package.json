@@ -1,0 +1,49 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "turbo run build --filter='./apps/*'",
+    "dev": "turbo run dev --filter='./apps/*'",
+    "lint": "turbo run lint --filter='./apps/*'",
+    "start": "turbo run start --filter='./apps/*'",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prettier:fix": "prettier --write .",
+    "prettier:check": "prettier --check .",
+    "lint:check": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "fullcheck": "bun run lint:check && bun run prettier:check",
+    "prepare": "node -e \"try { require('husky').install() } catch (e) {if (e.code !== 'MODULE_NOT_FOUND') throw e}\""
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^17.6.5",
+    "autoprefixer": "^10.4.16",
+    "commitlint": "^17.6.5",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-tree-shaking": "^1.10.0",
+    "husky": "^8.0.0",
+    "is-ci": "^3.0.1",
+    "postcss": "^8.4.31",
+    "prettier": "^3.0.3",
+    "tailwindcss": "^3.3.3",
+    "tsconfig": "*",
+    "turbo": "1.10.4",
+    "typescript": "4.5.3"
+  },
+  "name": "joger",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "next": "^13.5.3",
+    "next-auth": "^4.23.1",
+    "react-hot-toast": "^2.4.1",
+    "react-phone-input-2": "^2.15.1"
+  }
+}

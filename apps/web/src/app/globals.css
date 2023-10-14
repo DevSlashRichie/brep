@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    /* Chrome, Safari and Opera */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+  .customscrollbar::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #1fb5a655;
+    border-radius: 0 5px 5px 0;
+    overflow: hidden;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #1fb5a6aa;
+    overflow: hidden;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1fb5a6;
+    overflow: hidden;
+  }
+
+  .custom-input {
+    > div {
+      > div {
+        outline: none;
+        border-right: #1fb5a688 1px solid;
+      }
+    }
+  }
+}
